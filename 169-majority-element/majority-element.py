@@ -1,4 +1,14 @@
 class Solution:
     def majorityElement(self, nums: list[int]) -> int:
-        nums.sort()  # Sorts in-place
-        return nums[len(nums) // 2] 
+        count = 0
+        element = 0
+        
+        for i in range(len(nums)):
+            if count == 0:
+                element = nums[i]
+                
+            if element == nums[i]:
+                count += 1
+            else:
+                count -= 1
+        return element
