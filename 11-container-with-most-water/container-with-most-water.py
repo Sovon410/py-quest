@@ -5,9 +5,7 @@ class Solution:
         max_water = 0
 
         while(lp < rp):
-            width = rp - lp
-            ht = min(height[lp], height[rp])
-            curr_water = width * ht
+            curr_water = min(height[lp], height[rp]) * (rp  - lp)
             max_water = max(max_water, curr_water)
 
             lp, rp = (lp + 1, rp) if height[lp] < height[rp] else (lp, rp - 1)
