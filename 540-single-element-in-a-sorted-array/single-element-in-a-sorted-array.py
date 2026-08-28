@@ -29,3 +29,4 @@ class Solution:
                     start = mid + 1
                 else:    # Left side............
                     end = mid - 1
+        return -1
