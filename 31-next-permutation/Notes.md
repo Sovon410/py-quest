@@ -1,0 +1,1 @@
+<h2>next-permutation Notes</h2><hr>[ Time taken: 21m 47s ]
