@@ -1,28 +1,19 @@
 class Solution:
     def findMissingAndRepeatedValues(self, grid: List[List[int]]) -> List[int]:
-        total_ele = len(grid) ** 2
+        total_ele = len(grid) ** 2 + 1
+        freq = [0] * total_ele
 
-        ans = []
-        idx = [0] * 2
+        for row in grid:
+            for val in row:
+                freq[val] += 1
+        
+        repeated = -1
+        missing = -1
 
+        for i in range(1, total_ele):
+            if freq[i] == 2:
+                repeated = i
+            elif freq[i] == 0:
+                missing = i
 
-        for i in range(len(grid)):
-            for j in range(len(grid[i])):
-                ans.append(grid[i][j])
-                
-        ans.sort()
-        i = 0
-
-        while i < (total_ele - 1):
-            j = i + 1
-            while j < total_ele:
-                if ans[i] == ans[j]:
-                    idx[0] = ans[j]
-                j += 1
-            i += 1
-
-        for i in range(1, total_ele + 1):
-            if i not in ans:
-                idx[1] = i
-
-        return idx
+        return [repeated, missing]
