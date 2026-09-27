@@ -10,8 +10,8 @@ class Solution:
             digit = x % 10
             x //= 10
 
-            if rev_num > (INT_MAX - digit) // 10:
-                return 0
+            # if rev_num > (INT_MAX - digit) // 10:
+            #     return 0
             rev_num = rev_num * 10 + digit
         
         result = sign * rev_num
