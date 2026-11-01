@@ -9,5 +9,5 @@ class Solution:
                 freq[num] = 1
 
         for key in freq.keys():
-            if freq[key] >= lnt / 2:
+            if freq[key] > lnt / 2:
                 return key
